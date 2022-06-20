@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="LeatherbackSharedLibrary" Version="1.0.122" />
+        <PackageReference Include="Microsoft.Azure.SignalR" Version="1.9.2" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ApplicationServices\ApplicationServices.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="DomainEvents\Hubs" />
+      <Folder Include="DomainEvents\Services" />
+    </ItemGroup>
+
+</Project>

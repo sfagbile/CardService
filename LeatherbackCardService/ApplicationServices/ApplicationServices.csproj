@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="10.1.1" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="10.2.3" />
+        <PackageReference Include="MassTransit" Version="7.1.6" />
+        <PackageReference Include="MediatR" Version="10.0.1" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+        <PackageReference Include="LeatherbackSharedLibrary" Version="1.0.122" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+        
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Domain\Domain.csproj" />
+      <ProjectReference Include="..\Shared\Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="CardIssuance\Query" />
+      <Folder Include="CardIssuance\QueryHandler" />
+      <Folder Include="Enum" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Interfaces\ICardIssuerHandler.cs" />
+      <Compile Remove="CardIssuance\RailsBank\RailsBankCardIssuanceHandler.cs" />
+      <Compile Remove="RailsBank\**" />
+      <Compile Remove="WebHooks\RailsBank\Response\RailsBankBase.cs" />
+      <Compile Remove="WebHooks\RailsBank\Response\RailsBankBeneficiaryNotificationResponse.cs" />
+      <Compile Remove="WebHooks\RailsBank\Response\RailsBankCardManagementNotificationResponse.cs" />
+      <Compile Remove="WebHooks\RailsBank\Response\RailsBankCardPaymentTokenNotificationResponse.cs" />
+      <Compile Remove="WebHooks\RailsBank\Response\RailsBankCardTransactionNotificationResponse.cs" />
+      <Compile Remove="WebHooks\RailsBank\Response\RailsBankEndUserNotificationsResponse.cs" />
+      <Compile Remove="WebHooks\RailsBank\Response\RailsBankLedgerNotificationResponse.cs" />
+      <Compile Remove="WebHooks\RailsBank\Response\RailsBankTransactionNotification.cs" />
+      <Compile Remove="Cards\CommandHandler\AddCardCommandHandler.cs" />
+      <Compile Remove="Customer\CommandHandlers\CreateLedgerCommandHandler.cs" />
+      <Compile Remove="Customer\Commands\CreateLedgerCommand.cs" />
+      <Compile Remove="Card\QueryHandler\GetCardByCustomerIdHandler.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="RailsBank\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="RailsBank\**" />
+    </ItemGroup>
+
+</Project>
